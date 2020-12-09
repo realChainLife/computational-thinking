@@ -4,3 +4,11 @@ It’s been outlined in multiple guides including a Communications of the ACM es
 
 
 Now, whether you’re building a web-based solution, an iOS application, deploying containers or even managing libraries, it’s generally recommended that you apply these principles which some of you may already be familiar with, that is decomposition, pattern recognition, abstraction and algorithmic thinking. Combined, these four principles will enable you to determine how good you are getting at writing and testing code. To illustrate how each principle is applicable, the repo contains code examples of each principle as it can be applied in your code writing and testing. 
+
+## Decomposition
+
+## Abstraction
+
+## Pattern Recognition
+
+## Algorithmic Thinking
