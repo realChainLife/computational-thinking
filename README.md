@@ -16,7 +16,7 @@ This is a continual process of breaking down the complexities of developing and 
 
 This is the mapping of similarities and differences among decomposed problems. It helps with finding commonalities of repetition which is beneficial for making predicitions and working efficiently and building a strong foundation for designing algorithms. 
 
-The best reflection of pattern recogntiion is in the use of a Nested For Loop to allow rapid data sorting and insertion. You can find examples of Nested for Loops [here]().
+The best reflection of pattern recogntiion is in the use of a Nested For Loop to allow rapid data sorting and insertion. You can find examples of Nested for Loops here.
 
 ## Abstraction
 
@@ -25,10 +25,10 @@ This is the splitting of one function into multiple interconnected functions. Ap
 - to determine which processes happen when and where, or
 - to identify the processes that depend on each others. 
 
-You can find examples of code abstraction [here]().
+You can find examples of code abstraction here.
 
 ## Algorithmic Thinking
 
 This is a combination of decomposition, pattern recognition and abstraction to design algorithms that can determine the appropriate steps to take and organizing them into a series of instructions for solving a problem correclty. 
 
-Each algorith, typically has a starting point, a finishing point and a set of well-defined instructions in between. You can find examples of beginner friendly algorithms [here]().
+Each algorith, typically has a starting point, a finishing point and a set of well-defined instructions in between. You can find examples of beginner friendly algorithms here.
