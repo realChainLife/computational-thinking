@@ -92,3 +92,81 @@ you can make them private and use them to build up simpler public functions:
     def damage_for_attack(attack_rating, defense_rating)
       scratch(defend(randomize_damage(attack_rating), defense_rating))
     end
+
+## Method Chaining
+Method chaining is an object-oriented alternative to function chaining.
+A method chain is where a series of methods is called on an object without repeating the name of the object.
+This is done by having each chained method change the state of the object it’s called on,
+then return that object so it’s available for the next link in the chain:
+
+    damage = Damage.new(attack_rating)
+                   .randomize
+                   .apply_defense(defense_rating)
+                   .apply_scratch_damage
+                   .amount
+
+    class Damage
+        def initialize(damage_amount)
+          @damage_amount = damage_amount
+        end
+
+        def randomize
+          @damage_amount *= Random.new.rand(0.9..1.0)
+            self
+        end
+
+        def apply_defense(defense_rating)
+          @damage_amount *= (256.0 - defense_rating) / 256.0
+            self
+        end
+
+        def apply_scratch_damage
+          @damage_amount += 1
+            self
+        end
+
+        def amount
+          @damage_amount
+        end
+    end
+    
+Method chaining provides the same level of re-use as a public function chain,
+as well as the same cost in terms of coupling to implementation details.
+If you want to hide these details, rather than making a method chain private, there’s another option.
+
+## Private Method Tree
+A calculation can be split up into a “tree” of private methods that each performs part of the calculation. Each method might use data from instance variables or from other private methods. Ruby makes this decomposition especially readable by allowing you to call methods without parentheses (sometimes referred to as “barewords”):
+
+    def damage
+      (attack_damage * defense_modifier) + scratch_damage
+    end
+
+    private
+
+    def attack_damage
+      attack_rating * attack_modifier
+    end
+
+    def attack_modifier
+      rng.rand(0.9..1.0)
+    end
+
+    def defense_modifier
+      (max_defense_rating - defense_rating) /
+         max_defense_rating
+    end
+
+    def max_defense_rating
+      256.0
+    end
+
+    def scratch_damage
+     1
+    end
+
+The “tree” is really a tree of multiple levels of abstraction.
+For example, looking at damage, we can see it is calculated from 
+`attack_damage`, `defense_modifier`, and `scratch_damage`,but we 
+can’t see what those are calculated from without stepping down a 
+level. These levels of abstraction can be an advantage or a 
+disadvantage, depending on how visible that information needs to be.
