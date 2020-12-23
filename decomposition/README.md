@@ -170,3 +170,5 @@ For example, looking at damage, we can see it is calculated from
 can’t see what those are calculated from without stepping down a 
 level. These levels of abstraction can be an advantage or a 
 disadvantage, depending on how visible that information needs to be.
+
+This example of code decomposition was first published by [Josh Justice](https://www.bignerdranch.com/blog/category/authors/josh-justice/)
